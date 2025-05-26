@@ -21,4 +21,3 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-/mysql_data

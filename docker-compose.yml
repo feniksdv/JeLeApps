@@ -1,0 +1,28 @@
+services: #все контейнеры писать внутри
+    web-je-le-apps:
+        build:
+            context: . # загрузка DockerFile
+        container_name: web-je-le-apps #название контейнера
+        volumes: # мантирование каталогов
+            - ./:/var/www/html/
+        restart: always # всегда перезагружать если остановился
+        depends_on: # запускать этот контейнер после того как запуститься db
+            - db-je-le-apps
+        extra_hosts:
+            - "je-le-apps.test:127.0.0.1"
+        ports:
+            - "91:80"
+    db-je-le-apps:
+        image: uselagoon/mysql-8.4
+        container_name: db-je-le-apps
+        tty: true
+        volumes:
+            - ./mysql_data:/var/lib/mysql/
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: je-le-apps
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+        restart: always
+        ports:
+            - "3400:3306"

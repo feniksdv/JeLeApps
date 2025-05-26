@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "80be47ec-0f1e-40e5-ab94-bc4ac81c7056",
+		"name": "JeLeApps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43902850"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"Tets@11.ru\",\n    \"password\":\"Qqwe1q23!2#we\",\n    \"gender\":\"female\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://je-le-apps.test:91/api/v1/registration",
+					"protocol": "http",
+					"host": [
+						"je-le-apps",
+						"test"
+					],
+					"port": "91",
+					"path": [
+						"api",
+						"v1",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "7|iZjvB49WYIcMKeWbVyAHPRg969Gzmkfj8csVdsZfee0e911a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://je-le-apps.test:91/api/v1/getProfile",
+					"protocol": "http",
+					"host": [
+						"je-le-apps",
+						"test"
+					],
+					"port": "91",
+					"path": [
+						"api",
+						"v1",
+						"getProfile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
